@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, TextContainer, WelcomeCont, WelcomeH1, WelcomeP } from './WelcomePage.styled';
+import { WelcomeCont, WelcomeH1, WelcomeP } from './WelcomePage.styled';
 import { Link } from 'react-router-dom';
+import { Button, TextContainer } from 'styles/MainComponents/MainComponents.styled';
 
 const WelcomePage = () => {
   return (

@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-export const AdvertsListWrap = styled.ul`
-  margin-bottom: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px 29px;
-`;
-
 export const LoadButton = styled.button`
   display: block;
   margin-left: auto;

@@ -1,6 +1,7 @@
 import AdvertsListItem from 'components/AdvertsListItem/AdvertsListItem';
-import { AdvertsListWrap, LoadButton } from './AdvertsList.styled';
+import { LoadButton } from './AdvertsList.styled';
 import { useSelector } from 'react-redux';
+import { ListWrap } from 'styles/MainComponents/MainComponents.styled';
 
 const AdvertsList = ({ onClick }) => {
 
@@ -10,11 +11,11 @@ const AdvertsList = ({ onClick }) => {
 
     return (
       <>
-        <AdvertsListWrap>
+        <ListWrap>
           {cars.map(car => (
             <AdvertsListItem car={car} key={car.id} />
           ))}
-        </AdvertsListWrap>
+        </ListWrap>
         {isShowLoadMore && <LoadButton onClick={onClick}>Load More</LoadButton>}
       </>
     );

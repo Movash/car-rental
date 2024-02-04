@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import AdvertsListItem from 'components/AdvertsListItem/AdvertsListItem';
 import { Container } from 'styles/Container/Container';
-import { AdvertsListWrap } from 'components/AdvertsList/AdvertsList.styled';
 import { FavoriteH2 } from './FavoritesPage.styled';
-import { Button, TextContainer } from 'pages/WelcomePage/WelcomePage.styled';
 import { Link } from 'react-router-dom';
+import { Button, ListWrap, TextContainer } from 'styles/MainComponents/MainComponents.styled';
+import Loader from 'components/Loader/Loader';
+import { useSelector } from 'react-redux';
 
 const FavoritesPage = () => {
+  const isLoading = useSelector(state => state.app);
   const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
@@ -16,7 +18,8 @@ const FavoritesPage = () => {
 
   return (
     <Container>
-      <AdvertsListWrap>
+      {isLoading && <Loader />}
+      <ListWrap>
         {favorites.length > 0 ? (
           favorites.map(favorite => (
             <AdvertsListItem key={favorite.id} car={favorite} />
@@ -31,7 +34,7 @@ const FavoritesPage = () => {
             </Button>
           </TextContainer>
         )}
-      </AdvertsListWrap>
+      </ListWrap>
     </Container>
   );
 };

@@ -13,13 +13,8 @@ import {
 } from './ModalAdverts.styled';
 import Modal from 'react-modal';
 import sprite from '../../images/sprite.svg';
-import {
-  AdvertsItem,
-  AdvertsList,
-  ModelSpan,
-} from 'components/AdvertsListItem/AdvertsListItem.styled';
-import { Button } from 'pages/WelcomePage/WelcomePage.styled';
 import { useEffect } from 'react';
+import { AdvertsItem, AdvertsList, Button, ModelSpan } from 'styles/MainComponents/MainComponents.styled';
 
 const ModalAdverts = ({
   car,

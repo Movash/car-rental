@@ -2,15 +2,12 @@ import React, { useEffect, useState } from 'react';
 import {
   AdvertsCard,
   AdvertsContFlex,
-  AdvertsItem,
-  AdvertsList,
   MainDescr,
-  ModelSpan,
   SvgHeart,
 } from './AdvertsListItem.styled';
-import { Button } from 'pages/WelcomePage/WelcomePage.styled';
 import ModalAdverts from 'components/ModalAdverts/ModalAdverts';
 import sprite from '../../images/sprite.svg';
+import { AdvertsItem, AdvertsList, Button, ModelSpan } from 'styles/MainComponents/MainComponents.styled';
 
 const AdvertsListItem = props => {
   const [isHeartActive, setIsHeartActive] = useState(false);

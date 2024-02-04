@@ -10,7 +10,7 @@ export const ModalStyles = {
   content: {
     borderRadius: '24px',
     width: '541px',
-    height: '752px',
+    height: '760px',
     padding: '40px',
     top: '50%',
     left: '50%',
@@ -23,7 +23,6 @@ export const ButtonCloseModal = styled.button`
   position: absolute;
   top: 16px;
   right: 11px;
-  cursor: pointer;
   background-color: transparent;
   align-items: center;
   justify-content: center;
@@ -32,7 +31,7 @@ export const ButtonCloseModal = styled.button`
 export const Svg = styled.svg`
   width: 24px;
   height: 24px;
-  stroke: #121417;
+  stroke: var(--black-color);
 `;
 
 export const ModalImg = styled.img`
@@ -53,7 +52,7 @@ export const ModalMainDescr = styled.h2`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33;
-  color: #121417;
+  color: var(--black-color);
   margin-bottom: 8px;
 `;
 
@@ -61,7 +60,7 @@ export const ModalCarDescr = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.43;
-  color: #121417;
+  color: var(--black-color);
   margin-top: 14px;
 `;
 
@@ -69,7 +68,7 @@ export const Heading3 = styled.h3`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.43;
-  color: #121417;
+  color: var(--black-color);
   margin-bottom: 8px;
 `;
 
@@ -85,13 +84,13 @@ export const ModalConditionItem = styled.li`
   font-size: 12px;
   line-height: 1.5;
   letter-spacing: -0.02em;
-  color: #363535;
+  color: var(--light-black-color);
   border-radius: 35px;
   padding: 7px 14px;
-  background: #f9f9f9;
+  background: var(--second-gray-color);
 `;
 
 export const ModalSpan = styled.span`
   font-weight: 600;
-  color: #3470ff;
+  color: var(--sky-blue-color);
 `;

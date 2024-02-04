@@ -29,7 +29,7 @@ const Filter = () => {
           labelId={`make-select-label`}
           id="make-select"
           value={filters.make}
-          label="Make"
+          label="Choose the car"
           onChange={handleMakeChange}
           IconComponent={KeyboardArrowDownIcon}
           sx={{

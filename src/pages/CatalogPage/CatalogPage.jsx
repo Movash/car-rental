@@ -9,22 +9,22 @@ import Loader from 'components/Loader/Loader';
 const CatalogPage = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(state => state.app)
-  const [filters, setFilters] = useState({page: 1});
+  const [content, setContent] = useState({page: 1});
 
   useEffect(() => {
-    dispatch(getAllAdverts({ page: filters.page}));
-  }, [dispatch, filters.page]);
+    dispatch(getAllAdverts({ page: content.page}));
+  }, [dispatch, content.page]);
 
   const handleClick = () => {
-    const nextPage = filters.page + 1
-    setFilters({ page: nextPage });
+    const nextPage = content.page + 1
+    setContent({ page: nextPage });
   }
 
   return (
     <Container>
       {isLoading && <Loader />}
       <Filter />
-      <AdvertsList filters={filters} onClick={handleClick} />
+      <AdvertsList onClick={handleClick} />
     </Container>
   );
 };

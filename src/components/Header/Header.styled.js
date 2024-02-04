@@ -18,7 +18,11 @@ export const Nav = styled('nav')(() => {
         lineHeight: 1.5,
         letterSpacing: '0.02em',
         marginLeft: 40,
+        transition: 'color 250ms cubic-bezier(0.4, 0, 0.2, 1)',
         '&.active': {
+          color: 'var(--active-color)',
+        },
+        '&:hover, &:focus': {
           color: 'var(--active-color)',
         },
       },
