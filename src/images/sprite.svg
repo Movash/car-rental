@@ -1,0 +1,14 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<symbol id="icon-x-modal" viewBox="0 0 32 32">
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4615" d="M24 8l-16 16"></path>
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4615" d="M8 8l16 16"></path>
+    </symbol>
+    <symbol id="icon-heart-normal" viewBox="0 0 32 32">
+      <path d="M16.133 24.733l-0.133 0.133-0.147-0.133c-6.333-5.747-10.52-9.547-10.52-13.4 0-2.667 2-4.667 4.667-4.667 2.053 0 4.053 1.333 4.76 3.147h2.48c0.707-1.813 2.707-3.147 4.76-3.147 2.667 0 4.667 2 4.667 4.667 0 3.853-4.187 7.653-10.533 13.4zM22 4c-2.32 0-4.547 1.080-6 2.773-1.453-1.693-3.68-2.773-6-2.773-4.107 0-7.333 3.213-7.333 7.333 0 5.027 4.533 9.147 11.4 15.373l1.933 1.76 1.933-1.76c6.867-6.227 11.4-10.347 11.4-15.373 0-4.12-3.227-7.333-7.333-7.333z"></path>
+    </symbol>
+    <symbol id="icon-heart-active" viewBox="0 0 32 32">
+      <path d="M16 28.467l-1.933-1.76c-6.867-6.227-11.4-10.347-11.4-15.373 0-4.12 3.227-7.333 7.333-7.333 2.32 0 4.547 1.080 6 2.773 1.453-1.693 3.68-2.773 6-2.773 4.107 0 7.333 3.213 7.333 7.333 0 5.027-4.533 9.147-11.4 15.373z"></path>
+    </symbol>
+	</defs>
+</svg>
