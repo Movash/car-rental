@@ -1,10 +1,10 @@
-# Car rentals
+# Car rental
 
 Online Car Rental in Ukraine
 
 ## Project Description
 
-Car rentals is a web application that allows users to easily find and rent cars
+Car rental is a web application that allows users to easily find and rent cars
 in Ukraine. The application includes a home page with an overview of the
 company's services, a car catalog with filtering capabilities, and a page with
 user-favorite advertisements. The functionality includes adding advertisements
