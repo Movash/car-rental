@@ -29,7 +29,7 @@ export const Button = styled.button`
 export const AdvertsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 4px;
+  gap: 4px 6px;
   min-width: 274px;
   height: 40px;
   overflow: hidden;

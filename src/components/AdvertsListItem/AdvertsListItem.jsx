@@ -8,6 +8,7 @@ import {
 import ModalAdverts from 'components/ModalAdverts/ModalAdverts';
 import sprite from '../../images/sprite.svg';
 import { AdvertsItem, AdvertsList, Button, ModelSpan } from 'styles/MainComponents/MainComponents.styled';
+import placeholder from '../../images/car-placeholder.jpg';
 
 const AdvertsListItem = props => {
   const [isHeartActive, setIsHeartActive] = useState(false);
@@ -55,10 +56,12 @@ const AdvertsListItem = props => {
         <div>
           <SvgHeart $active={isHeartActive} onClick={toggleHeartActive}>
             <use
-              href={`${sprite}#icon-heart-${isHeartActive ? 'active' : 'normal'}`}
+              href={`${sprite}#icon-heart-${
+                isHeartActive ? 'active' : 'normal'
+              }`}
             />
           </SvgHeart>
-          <img src={img} alt="car" />
+          <img src={img || placeholder} alt="car" />
           <AdvertsContFlex>
             <MainDescr>
               {make} <ModelSpan>{model}</ModelSpan>, {year}
@@ -66,7 +69,9 @@ const AdvertsListItem = props => {
             <MainDescr>{rentalPrice}</MainDescr>
           </AdvertsContFlex>
           <AdvertsList>
-            <AdvertsItem>{address}</AdvertsItem>
+            {address.split(',').map((part, index) => (
+              <AdvertsItem key={index}>{part.trim()}</AdvertsItem>
+            ))}
             <AdvertsItem>{rentalCompany}</AdvertsItem>
             <AdvertsItem>{type}</AdvertsItem>
             <AdvertsItem>{model}</AdvertsItem>

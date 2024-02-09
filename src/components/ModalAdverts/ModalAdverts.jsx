@@ -15,6 +15,7 @@ import Modal from 'react-modal';
 import sprite from '../../images/sprite.svg';
 import { useEffect } from 'react';
 import { AdvertsItem, AdvertsList, Button, ModelSpan } from 'styles/MainComponents/MainComponents.styled';
+import placeholder from '../../images/car-placeholder.jpg';
 
 const ModalAdverts = ({
   car,
@@ -55,14 +56,16 @@ const ModalAdverts = ({
       </ButtonCloseModal>
       {isOpen && (
         <>
-          <ModalImg src={img} alt="car" />
+          <ModalImg src={img || placeholder} alt="car" />
           <ModalWrapper>
             <div>
               <ModalMainDescr>
                 {make} <ModelSpan>{model}</ModelSpan>, {year}
               </ModalMainDescr>
               <AdvertsList>
-                <AdvertsItem>{address}</AdvertsItem>
+                {address.split(',').map((part, index) => (
+                  <AdvertsItem key={index}>{part.trim()}</AdvertsItem>
+                ))}
                 <AdvertsItem>Id: {id}</AdvertsItem>
                 <AdvertsItem>Year: {year}</AdvertsItem>
                 <AdvertsItem>Type: {type}</AdvertsItem>
@@ -97,7 +100,8 @@ const ModalAdverts = ({
                     );
                   })}
                 <ModalConditionItem>
-                  Mileage: <ModalSpan>{mileage}</ModalSpan>
+                  Mileage:{' '}
+                  <ModalSpan>{mileage.toLocaleString('en-US')}</ModalSpan>
                 </ModalConditionItem>
                 <ModalConditionItem>
                   Price: <ModalSpan>{editedPrice}</ModalSpan>
