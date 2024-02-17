@@ -1,11 +1,52 @@
 import { createGlobalStyle } from 'styled-components';
 import 'modern-normalize';
-import { Montserrat, Manrope } from 'styles/fonts/fonts';
+import ManropeRegular from '../../fonts/Manrope/Manrope-Regular.ttf';
+import ManropeMedium from '../../fonts/Manrope/Manrope-Medium.ttf';
+import ManropeSemiBold from '../../fonts/Manrope/Manrope-SemiBold.ttf';
+import MontserratRegular from '../../fonts/Montserrat/Montserrat-Regular.ttf';
+import MontserratSemiBold from '../../fonts/Montserrat/Montserrat-SemiBold.ttf';
 
 const GlobalStyle = createGlobalStyle`
 
-    ${Manrope}
-    ${Montserrat}
+    @font-face {
+        font-family: 'ManropeRegular';
+        src: local('ManropeRegular'),
+        url(${ManropeRegular}) format('ttf');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'ManropeMedium';
+        src: local('ManropeMedium'),
+        url(${ManropeMedium}) format('ttf');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'ManropeSemiBold';
+        src: local('ManropeSemiBold'),
+        url(${ManropeSemiBold}) format('ttf');
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'MontserratRegular';
+        src: local('MontserratRegular'),
+        url(${MontserratRegular}) format('ttf');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'MontserratSemiBold';
+        src: local('MontserratSemiBold'),
+        url(${MontserratSemiBold}) format('ttf');
+        font-weight: 600;
+        font-style: normal;
+    }
 
 body {
     background-color: var(--white-color);
@@ -13,7 +54,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100vh;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'ManropeRegular', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
