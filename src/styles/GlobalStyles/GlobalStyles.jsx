@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'ManropeRegular';
         src: local('ManropeRegular'),
-        url(${ManropeRegular}) format('ttf');
+        url(${ManropeRegular}) format('truetype');
         font-weight: 400;
         font-style: normal;
     }
@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'ManropeMedium';
         src: local('ManropeMedium'),
-        url(${ManropeMedium}) format('ttf');
+        url(${ManropeMedium}) format('truetype');
         font-weight: 500;
         font-style: normal;
     }
@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'ManropeSemiBold';
         src: local('ManropeSemiBold'),
-        url(${ManropeSemiBold}) format('ttf');
+        url(${ManropeSemiBold}) format('truetype');
         font-weight: 600;
         font-style: normal;
     }
@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'MontserratRegular';
         src: local('MontserratRegular'),
-        url(${MontserratRegular}) format('ttf');
+        url(${MontserratRegular}) format('truetype');
         font-weight: 400;
         font-style: normal;
     }
@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'MontserratSemiBold';
         src: local('MontserratSemiBold'),
-        url(${MontserratSemiBold}) format('ttf');
+        url(${MontserratSemiBold}) format('truetype');
         font-weight: 600;
         font-style: normal;
     }
