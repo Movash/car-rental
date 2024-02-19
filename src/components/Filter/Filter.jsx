@@ -27,6 +27,7 @@ const Filter = () => {
           sx={{
             '.MuiInputLabel-root': {
               color: '#121417',
+              fontFamily: 'ManropeMedium',
               fontWeight: 500,
               fontSize: '18px',
               lineHeight: 1.11,
@@ -39,7 +40,7 @@ const Filter = () => {
             },
           }}
         >
-          <InputLabel id={`make-select-label`}>Choose the car</InputLabel>
+          <InputLabel id={`make-select-label`}>Enter the text</InputLabel>
           <Select
             MenuProps={{
               PaperProps: {
@@ -71,7 +72,7 @@ const Filter = () => {
             labelId={`make-select-label`}
             id="make-select"
             value={filters.make}
-            label="Choose the car"
+            label="Enter the text"
             onChange={handleMakeChange}
             IconComponent={KeyboardArrowDownIcon}
           >
