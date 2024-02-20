@@ -34,6 +34,7 @@ export const AdvertsContFlex = styled.div`
 `;
 
 export const MainDescr = styled.h2`
+  font-family: 'ManropeMedium';
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;

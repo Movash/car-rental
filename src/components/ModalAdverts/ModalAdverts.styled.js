@@ -49,6 +49,7 @@ export const ModalWrapper = styled.div`
 `;
 
 export const ModalMainDescr = styled.h2`
+  font-family: 'ManropeMedium';
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33;
@@ -65,6 +66,7 @@ export const ModalCarDescr = styled.p`
 `;
 
 export const Heading3 = styled.h3`
+  font-family: 'ManropeMedium';
   font-weight: 500;
   font-size: 14px;
   line-height: 1.43;
@@ -79,18 +81,21 @@ export const ModalConditionList = styled.ul`
 `;
 
 export const ModalConditionItem = styled.li`
-  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
-  letter-spacing: -0.02em;
   color: var(--light-black-color);
   border-radius: 35px;
   padding: 7px 14px;
   background: var(--second-gray-color);
+  &.changeFontFamily {
+    font-family: 'MontserratRegular';
+    letter-spacing: -0.02em;
+  }
 `;
 
 export const ModalSpan = styled.span`
+  font-family: 'MontserratSemiBold';
   font-weight: 600;
   color: var(--sky-blue-color);
 `;

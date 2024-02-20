@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const LoadButton = styled.button`
+  font-family: 'ManropeMedium';
   display: block;
   margin-left: auto;
   margin-right: auto;

@@ -4,6 +4,8 @@ export const FiltersWrap = styled.div`
   margin-bottom: 50px;
   display: flex;
   justify-content: center;
+  align-items: end;
+  gap: 18px;
 `;
 
 export const FilterDescrWrap = styled.div`
@@ -13,6 +15,7 @@ export const FilterDescrWrap = styled.div`
 `;
 
 export const FilterDescr = styled.p`
+  font-family: 'ManropeMedium';
   font-weight: 500;
   font-size: 14px;
   line-height: 1.29;

@@ -12,6 +12,7 @@ export const TextContainer = styled.div`
 `;
 
 export const Button = styled.button`
+  font-family: 'ManropeSemiBold';
   font-weight: 600;
   font-size: 14px;
   line-height: 1.43;
@@ -20,6 +21,9 @@ export const Button = styled.button`
   padding: 12px 50px;
   background-color: var(--sky-blue-color);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &.searchPadding {
+    padding: 14px 44px;
+  }
   &:hover,
   &:focus {
     background-color: var(--blue-color);
