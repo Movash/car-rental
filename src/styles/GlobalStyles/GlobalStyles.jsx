@@ -98,6 +98,22 @@ button {
     cursor: pointer;
     border: none;
 }
+
+::-webkit-scrollbar {
+    width: 24px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--black-opacity-5-color);
+    border-radius: 24px;
+    border: 8px solid white;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
 `;
 
 export default GlobalStyle;
