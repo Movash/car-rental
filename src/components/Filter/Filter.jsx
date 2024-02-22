@@ -2,12 +2,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { InputLabel } from '@mui/material';
 import makes from './makes.json';
 import { FilterDescr, FilterDescrWrap, FiltersWrap } from './Filter.styled';
 import { useDispatch } from 'react-redux';
 import { getFilter } from '../../redux/adverts/thunks';
 import { useState } from 'react';
+import { Button } from 'styles/MainComponents/MainComponents.styled';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -25,22 +25,19 @@ const Filter = () => {
         <FilterDescr>Car brand</FilterDescr>
         <FormControl
           sx={{
-            '.MuiInputLabel-root': {
-              color: '#121417',
+            '.MuiInputBase-formControl': {
+              height: '48px',
+              width: '224px',
               fontFamily: 'ManropeMedium',
               fontWeight: 500,
               fontSize: '18px',
-              lineHeight: 1.11,
-              '&.Mui-focused': {
-                color: 'var(--third-gray-color)',
-              },
+              color: '#121417',
             },
             '.MuiSelect-icon': {
               color: 'var(--black-color)',
             },
           }}
         >
-          <InputLabel id={`make-select-label`}>Enter the text</InputLabel>
           <Select
             MenuProps={{
               PaperProps: {
@@ -48,7 +45,7 @@ const Filter = () => {
                   maxHeight: 224,
                   maxWidth: 272,
                   marginTop: 4,
-                  border: '1px solid var(--black-opacity-20-color)',
+                  border: '1px solid var(--black-opacity-5-color)',
                   borderRadius: '14px',
                   fontWeight: 500,
                   fontSize: '16px',
@@ -63,31 +60,59 @@ const Filter = () => {
               height: 52,
               borderRadius: '14px',
               background: 'var(--gray-color)',
-              '&:hover': {
-                '& .MuiOutlinedInput-notchedOutline': {
-                  borderColor: 'var(--third-gray-color)',
-                },
+              '& .MuiOutlinedInput-notchedOutline': {
+                border: 'none',
               },
             }}
-            labelId={`make-select-label`}
-            id="make-select"
             value={filters.make}
-            label="Enter the text"
+            displayEmpty
+            inputProps={{ 'aria-label': 'Without label' }}
             onChange={handleMakeChange}
             IconComponent={KeyboardArrowDownIcon}
           >
+            <MenuItem
+              sx={{
+                fontFamily: 'ManropeMedium',
+                fontWeight: 500,
+                fontSize: '16px',
+                lineHeight: '1.25',
+                color: 'var(--black-opacity-20-color)',
+                transition: 'color 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+                '&:hover': {
+                  color: 'var(--black-color)',
+                  background: 'none',
+                },
+                '&.Mui-selected': {
+                  color: 'var(--black-color)',
+                  background: 'none',
+                  '&:hover': {
+                    background: 'none',
+                  },
+                },
+              }}
+              value=""
+            >
+              All brands
+            </MenuItem>
             {makes?.map((item, index) => (
               <MenuItem
                 sx={{
+                  fontFamily: 'ManropeMedium',
                   fontWeight: 500,
                   fontSize: '16px',
                   lineHeight: '1.25',
                   color: 'var(--black-opacity-20-color)',
-                  transition:
-                    'background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+                  transition: 'color 250ms cubic-bezier(0.4, 0, 0.2, 1)',
                   '&:hover': {
                     color: 'var(--black-color)',
-                    background: 'var(--gray-color)',
+                    background: 'none',
+                  },
+                  '&.Mui-selected': {
+                    color: 'var(--black-color)',
+                    background: 'none',
+                    '&:hover': {
+                      background: 'none',
+                    },
                   },
                 }}
                 key={index}
@@ -99,6 +124,9 @@ const Filter = () => {
           </Select>
         </FormControl>
       </FilterDescrWrap>
+      <div>
+        <Button className={'searchPadding'}>Search</Button>
+      </div>
     </FiltersWrap>
   );
 };
