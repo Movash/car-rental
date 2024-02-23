@@ -14,15 +14,15 @@ import {
 import Modal from 'react-modal';
 import sprite from '../../images/sprite.svg';
 import { useEffect } from 'react';
-import { AdvertsItem, AdvertsList, Button, ModelSpan } from 'styles/MainComponents/MainComponents.styled';
+import {
+  AdvertsItem,
+  AdvertsList,
+  Button,
+  ModelSpan,
+} from 'styles/MainComponents/MainComponents.styled';
 import placeholder from '../../images/car-placeholder.jpg';
 
-const ModalAdverts = ({
-  car,
-  isOpen,
-  onClose,
-}) => {
-
+const ModalAdverts = ({ car, isOpen, onClose }) => {
   const {
     id,
     year,
@@ -38,8 +38,8 @@ const ModalAdverts = ({
     rentalPrice,
     address,
     rentalConditions,
-    mileage
-  } = car
+    mileage,
+  } = car;
 
   useEffect(() => {
     Modal.setAppElement('#root');
@@ -93,9 +93,20 @@ const ModalAdverts = ({
                 {rentalConditions &&
                   rentalConditions.split('\n').map((condition, index) => {
                     const parts = condition.split(':');
+                    const modalConditionItemClass =
+                      parts.length === 1 ? '' : 'changeFontFamily';
                     return (
-                      <ModalConditionItem key={index}>
-                        {parts[0]}: <ModalSpan>{parts[1]}</ModalSpan>
+                      <ModalConditionItem
+                        key={index}
+                        className={modalConditionItemClass}
+                      >
+                        {parts.length === 1 ? (
+                          parts[0]
+                        ) : (
+                          <>
+                            {parts[0]}: <ModalSpan>{parts[1]}</ModalSpan>
+                          </>
+                        )}
                       </ModalConditionItem>
                     );
                   })}
