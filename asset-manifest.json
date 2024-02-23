@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/car-rental/static/css/main.e9a66dce.css",
-    "main.js": "/car-rental/static/js/main.9f8b9848.js",
+    "main.js": "/car-rental/static/js/main.679183e8.js",
     "static/js/922.a8189afc.chunk.js": "/car-rental/static/js/922.a8189afc.chunk.js",
-    "static/js/263.5ddc64ba.chunk.js": "/car-rental/static/js/263.5ddc64ba.chunk.js",
-    "static/js/780.ab312387.chunk.js": "/car-rental/static/js/780.ab312387.chunk.js",
+    "static/js/263.fc3c3e3e.chunk.js": "/car-rental/static/js/263.fc3c3e3e.chunk.js",
+    "static/js/780.d70fb0c3.chunk.js": "/car-rental/static/js/780.d70fb0c3.chunk.js",
     "static/js/948.54351361.chunk.js": "/car-rental/static/js/948.54351361.chunk.js",
     "static/js/900.58f45369.chunk.js": "/car-rental/static/js/900.58f45369.chunk.js",
     "static/media/Montserrat-SemiBold.ttf": "/car-rental/static/media/Montserrat-SemiBold.93b37a465fc4ec0d0415.ttf",
@@ -16,15 +16,15 @@
     "static/media/sprite.svg": "/car-rental/static/media/sprite.35e3d46b5de1c0dcb3ae01d7525d6b68.svg",
     "index.html": "/car-rental/index.html",
     "main.e9a66dce.css.map": "/car-rental/static/css/main.e9a66dce.css.map",
-    "main.9f8b9848.js.map": "/car-rental/static/js/main.9f8b9848.js.map",
+    "main.679183e8.js.map": "/car-rental/static/js/main.679183e8.js.map",
     "922.a8189afc.chunk.js.map": "/car-rental/static/js/922.a8189afc.chunk.js.map",
-    "263.5ddc64ba.chunk.js.map": "/car-rental/static/js/263.5ddc64ba.chunk.js.map",
-    "780.ab312387.chunk.js.map": "/car-rental/static/js/780.ab312387.chunk.js.map",
+    "263.fc3c3e3e.chunk.js.map": "/car-rental/static/js/263.fc3c3e3e.chunk.js.map",
+    "780.d70fb0c3.chunk.js.map": "/car-rental/static/js/780.d70fb0c3.chunk.js.map",
     "948.54351361.chunk.js.map": "/car-rental/static/js/948.54351361.chunk.js.map",
     "900.58f45369.chunk.js.map": "/car-rental/static/js/900.58f45369.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e9a66dce.css",
-    "static/js/main.9f8b9848.js"
+    "static/js/main.679183e8.js"
   ]
 }
