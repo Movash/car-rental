@@ -17,10 +17,18 @@ export async function fetchAdverts(data) {
 
 export async function fetchFilterAdverts(data) {
   const make = data.make;
+  const page = data.page ? data.page : 1;
   const res = await axios.get('adverts', {
     params: {
       make,
+      page,
+      limit: LIMIT,
     },
   });
   return res.data;
+}
+
+export async function fetchTotalAdverts() {
+  const res = await axios.get('adverts');
+  return res.data.length;
 }
