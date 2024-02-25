@@ -7,7 +7,7 @@ const AdvertsList = ({ onClick }) => {
 
     const cars = useSelector(state => state.adverts.adverts);
     const total = useSelector(state => state.adverts.total);
-    const isShowLoadMore = total%12 === 0 ? true : false;
+    const isShowLoadMore = total > cars.length && cars.length % 12 === 0;
 
     return (
       <>
