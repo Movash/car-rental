@@ -1,24 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Filter from 'components/Filter/Filter';
 import AdvertsList from 'components/AdvertsList/AdvertsList';
 import { Container } from 'styles/Container/Container';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllAdverts } from '../../redux/adverts/thunks';
+import { getAllAdverts, getTotalAdverts} from '../../redux/adverts/thunks';
 import Loader from 'components/Loader/Loader';
+import { advertsSlice } from '../../redux/adverts/slice';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(state => state.app)
-  const [content, setContent] = useState({page: 1});
+  const isLoading = useSelector(state => state.app);
+  const page = useSelector(state => state.adverts.page);
 
   useEffect(() => {
-    dispatch(getAllAdverts({ page: content.page}));
-  }, [dispatch, content.page]);
+    dispatch(advertsSlice.actions.setPage(1));
+    dispatch(advertsSlice.actions.clearAdverts());
+    dispatch(getTotalAdverts());
+    dispatch(getAllAdverts({ page: 1 }));
+  }, [dispatch]);
 
   const handleClick = () => {
-    const nextPage = content.page + 1
-    setContent({ page: nextPage });
-  }
+    const nextPage = page + 1;
+    dispatch(advertsSlice.actions.setPage(nextPage));
+    dispatch(getAllAdverts({ page: nextPage }));
+  };
 
   return (
     <Container>
