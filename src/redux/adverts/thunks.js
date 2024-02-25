@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchAdverts, fetchFilterAdverts } from 'api/adverts.api';
+import { fetchAdverts, fetchFilterAdverts, fetchTotalAdverts } from 'api/adverts.api';
 
 export const getAllAdverts = createAsyncThunk(
   'adverts/fetchAll',
@@ -18,6 +18,18 @@ export const getFilter = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const res = await fetchFilterAdverts(data);
+      return res;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getTotalAdverts = createAsyncThunk(
+  'adverts/fetchTotal',
+  async (thunkAPI) => {
+    try {
+      const res = await fetchTotalAdverts();
       return res;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
