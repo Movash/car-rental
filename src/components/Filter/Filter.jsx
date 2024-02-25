@@ -8,16 +8,22 @@ import { useDispatch } from 'react-redux';
 import { getFilter } from '../../redux/adverts/thunks';
 import { useState } from 'react';
 import { Button } from 'styles/MainComponents/MainComponents.styled';
+import { advertsSlice } from '../../redux/adverts/slice';
 
 const Filter = () => {
   const dispatch = useDispatch();
 
-  const [filters, setFilters] = useState({ make: '' });
+  const [filters, setFilters] = useState({ make: ''});
 
   const handleMakeChange = event => {
     setFilters({ make: event.target.value });
-    dispatch(getFilter({ make: event.target.value }));
   };
+
+  const handleClick = () => {
+    const startPage = 1;
+    dispatch(advertsSlice.actions.setPage(startPage));
+    dispatch(getFilter({ make: filters.make, page: startPage }));
+  }
 
   return (
     <FiltersWrap>
@@ -125,7 +131,7 @@ const Filter = () => {
         </FormControl>
       </FilterDescrWrap>
       <div>
-        <Button className={'searchPadding'}>Search</Button>
+        <Button onClick={handleClick} className={'searchPadding'}>Search</Button>
       </div>
     </FiltersWrap>
   );
