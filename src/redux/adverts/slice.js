@@ -5,6 +5,7 @@ const initialState = {
   adverts: [],
   total: null,
   page: 1,
+  make: '',
 };
 
 export const advertsSlice = createSlice({
@@ -13,6 +14,9 @@ export const advertsSlice = createSlice({
   reducers: {
     setPage: (state, { payload }) => {
       state.page = payload;
+    },
+    setMake: (state, { payload }) => {
+      state.make = payload;
     },
     clearAdverts: state => {
       state.adverts = [];
@@ -26,7 +30,10 @@ export const advertsSlice = createSlice({
       state.adverts.push(...newCars);
     });
     builder.addCase(getFilter.fulfilled, (state, { payload }) => {
-      state.adverts = payload;
+      const newCars = payload.filter(
+        car => !state.adverts.find(existingCar => existingCar.id === car.id)
+      );
+      state.adverts.push(...newCars);
     });
     builder.addCase(getTotalAdverts.fulfilled, (state, { payload }) => {
       state.total = payload;
