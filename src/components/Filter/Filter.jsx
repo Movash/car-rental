@@ -4,25 +4,25 @@ import Select from '@mui/material/Select';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import makes from './makes.json';
 import { FilterDescr, FilterDescrWrap, FiltersWrap } from './Filter.styled';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getFilter } from '../../redux/adverts/thunks';
-import { useState } from 'react';
 import { Button } from 'styles/MainComponents/MainComponents.styled';
 import { advertsSlice } from '../../redux/adverts/slice';
 
 const Filter = () => {
   const dispatch = useDispatch();
-
-  const [filters, setFilters] = useState({ make: ''});
+  const make = useSelector(state => state.adverts.make);
 
   const handleMakeChange = event => {
-    setFilters({ make: event.target.value });
+    const newMake = event.target.value;
+    dispatch(advertsSlice.actions.setMake(newMake));
   };
 
   const handleClick = () => {
     const startPage = 1;
+    dispatch(advertsSlice.actions.clearAdverts());
     dispatch(advertsSlice.actions.setPage(startPage));
-    dispatch(getFilter({ make: filters.make, page: startPage }));
+    dispatch(getFilter({ make: make, page: startPage }));
   }
 
   return (
@@ -70,7 +70,7 @@ const Filter = () => {
                 border: 'none',
               },
             }}
-            value={filters.make}
+            value={make}
             displayEmpty
             inputProps={{ 'aria-label': 'Without label' }}
             onChange={handleMakeChange}
