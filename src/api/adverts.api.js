@@ -28,7 +28,18 @@ export async function fetchFilterAdverts(data) {
   return res.data;
 }
 
-export async function fetchTotalAdverts() {
-  const res = await axios.get('adverts');
-  return res.data.length;
+export async function fetchTotalAdverts(data) {
+  const make = data.make;
+  const res = await axios.get('adverts', {
+    params: {
+      make,
+    },
+  });
+  if (make === "") {
+    return res.data.length;
+  } else {
+    const adverts = res.data;
+    const totalAdverts = adverts.filter(advert => advert.make === make).length;
+    return totalAdverts;
+  }
 }
