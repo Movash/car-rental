@@ -4,25 +4,27 @@ import Select from '@mui/material/Select';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import makes from './makes.json';
 import { FilterDescr, FilterDescrWrap, FiltersWrap } from './Filter.styled';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getFilter } from '../../redux/adverts/thunks';
 import { Button } from 'styles/MainComponents/MainComponents.styled';
 import { advertsSlice } from '../../redux/adverts/slice';
+import { useState } from 'react';
 
 const Filter = () => {
   const dispatch = useDispatch();
-  const make = useSelector(state => state.adverts.make);
+  const [newMake, setNewMake] = useState('')
 
   const handleMakeChange = event => {
-    const newMake = event.target.value;
-    dispatch(advertsSlice.actions.setMake(newMake));
+    const currentMake = event.target.value;
+    setNewMake(currentMake);
   };
 
   const handleClick = () => {
+    dispatch(advertsSlice.actions.setMake(newMake));
     const startPage = 1;
     dispatch(advertsSlice.actions.clearAdverts());
     dispatch(advertsSlice.actions.setPage(startPage));
-    dispatch(getFilter({ make: make, page: startPage }));
+    dispatch(getFilter({ make: newMake, page: startPage }));
   }
 
   return (
@@ -70,7 +72,7 @@ const Filter = () => {
                 border: 'none',
               },
             }}
-            value={make}
+            value={newMake}
             displayEmpty
             inputProps={{ 'aria-label': 'Without label' }}
             onChange={handleMakeChange}
@@ -131,7 +133,9 @@ const Filter = () => {
         </FormControl>
       </FilterDescrWrap>
       <div>
-        <Button onClick={handleClick} className={'searchPadding'}>Search</Button>
+        <Button onClick={handleClick} className={'searchPadding'}>
+          Search
+        </Button>
       </div>
     </FiltersWrap>
   );
