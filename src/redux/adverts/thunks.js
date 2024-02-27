@@ -27,9 +27,9 @@ export const getFilter = createAsyncThunk(
 
 export const getTotalAdverts = createAsyncThunk(
   'adverts/fetchTotal',
-  async (thunkAPI) => {
+  async (data, thunkAPI) => {
     try {
-      const res = await fetchTotalAdverts();
+      const res = await fetchTotalAdverts(data);
       return res;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
