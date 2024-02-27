@@ -14,9 +14,12 @@ const CatalogPage = () => {
   const make = useSelector(state => state.adverts.make);
 
   useEffect(() => {
+    dispatch(getTotalAdverts({make: make}));
+  }, [dispatch, make]);
+
+  useEffect(() => {
     dispatch(advertsSlice.actions.setPage(1));
     dispatch(advertsSlice.actions.clearAdverts());
-    dispatch(getTotalAdverts());
     dispatch(getAllAdverts({ page: 1 }));
   }, [dispatch]);
 
