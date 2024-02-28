@@ -17,5 +17,6 @@
 #root {
   height: 100vh; 
   overflow: auto;
+  scrollbar-gutter: stable both-edges;
 }
 }
