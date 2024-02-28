@@ -20,8 +20,8 @@ const Filter = () => {
   };
 
   const handleClick = () => {
-    dispatch(advertsSlice.actions.setMake(newMake));
     const startPage = 1;
+    dispatch(advertsSlice.actions.setMake(newMake));
     dispatch(advertsSlice.actions.clearAdverts());
     dispatch(advertsSlice.actions.setPage(startPage));
     dispatch(getFilter({ make: newMake, page: startPage }));
