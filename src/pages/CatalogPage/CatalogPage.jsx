@@ -3,7 +3,7 @@ import Filter from 'components/Filter/Filter';
 import AdvertsList from 'components/AdvertsList/AdvertsList';
 import { Container } from 'styles/Container/Container';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllAdverts, getFilter, getTotalAdverts} from '../../redux/adverts/thunks';
+import { getFilter, getTotalAdverts} from '../../redux/adverts/thunks';
 import Loader from 'components/Loader/Loader';
 import { advertsSlice } from '../../redux/adverts/slice';
 
@@ -18,9 +18,13 @@ const CatalogPage = () => {
   }, [dispatch, make]);
 
   useEffect(() => {
-    dispatch(advertsSlice.actions.setPage(1));
-    dispatch(advertsSlice.actions.clearAdverts());
-    dispatch(getAllAdverts({ page: 1 }));
+    const startPage = 1;
+    dispatch(getFilter({ page: startPage }));
+    return () => {
+      dispatch(advertsSlice.actions.setPage(startPage));
+      dispatch(advertsSlice.actions.clearAdverts());
+      dispatch(advertsSlice.actions.clearMake());
+    };
   }, [dispatch]);
 
   const handleClick = () => {
@@ -29,7 +33,7 @@ const CatalogPage = () => {
     if (make) {
       dispatch(getFilter({ make: make, page: nextPage }));
     } else {
-      dispatch(getAllAdverts({ page: nextPage }));
+      dispatch(getFilter({ page: nextPage }));
     }
   };
 
