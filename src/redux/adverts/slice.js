@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getAllAdverts, getFilter, getTotalAdverts } from './thunks';
+import { getFilter, getTotalAdverts } from './thunks';
 
 const initialState = {
   adverts: [],
@@ -21,14 +21,11 @@ export const advertsSlice = createSlice({
     clearAdverts: state => {
       state.adverts = [];
     },
+    clearMake: state => {
+      state.make = '';
+    },
   },
   extraReducers: builder => {
-    builder.addCase(getAllAdverts.fulfilled, (state, { payload }) => {
-      const newCars = payload.filter(
-        car => !state.adverts.find(existingCar => existingCar.id === car.id)
-      );
-      state.adverts.push(...newCars);
-    });
     builder.addCase(getFilter.fulfilled, (state, { payload }) => {
       const newCars = payload.filter(
         car => !state.adverts.find(existingCar => existingCar.id === car.id)
